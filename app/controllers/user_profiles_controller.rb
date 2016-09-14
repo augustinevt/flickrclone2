@@ -1,5 +1,5 @@
 class UserProfilesController < ApplicationController
-
+  before_filter :authenticate_user!
 
   def new
     @user_profile = UserProfile.new

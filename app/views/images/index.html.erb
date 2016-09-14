@@ -1,0 +1,7 @@
+
+<% @images.each do |image| %>
+  <h1><%= image.title %></h1>
+  <p><%= image_tag(image.attachment) %></p>
+  <i><%= image.user.user_profile.username %></i>
+<%end%>
+<h1><%= link_to 'Add New Image', new_image_path %></h1>
