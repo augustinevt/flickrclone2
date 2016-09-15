@@ -17,3 +17,8 @@
 * create category_tags
 * set_up associations
 * test in the console
+
+* user_tag form
+  * select user
+  * get the image
+  * manage uniqueness

@@ -12,5 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+  $(".user-tag-search").autocomplete({
+    source: '/user_profiles/autocomplete.json',
+  });
+})

@@ -1,0 +1,6 @@
+<%= form_for UserTag.new do | f | %>
+  <%= f.label :username %>
+  <%= f.hidden_field :image_id, value: @image.id %>
+  <%= text_field_tag :username, params[:username], class: "user-tag-search" %>
+  <%= f.submit %>
+<% end %>

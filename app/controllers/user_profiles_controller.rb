@@ -22,6 +22,18 @@ class UserProfilesController < ApplicationController
     @profile = current_user.user_profile
   end
 
+  def autocomplete
+
+    @name = UserProfile.order(:username).where("username ILIKE ?", "%#{ params[:term] }%")
+    respond_to do | format |
+      format.html
+      format.json {
+        render json: @name.map(&:username).to_json
+      }
+
+    end
+  end
+
   private
 
   def profile_params
