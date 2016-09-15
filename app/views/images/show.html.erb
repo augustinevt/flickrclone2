@@ -1,2 +1,25 @@
 <h1>Images#show</h1>
 <p>Find me in app/views/images/show.html.erb</p>
+<h1><%= @image.title %></h1>
+<p><%= image_tag(@image.attachment) %></p>
+<i><%= @image.user.user_profile.username %></i>
+
+<%= render 'categories/form' %>
+
+<% if @image.tagged_users.any? %>
+
+<h4>Tagged Users</h4>
+  <% @image.tagged_users.each do |user| %>
+  <% if user.user_profile %>
+    <%= user.user_profile.username %>,
+  <% end%>
+  <% end %>
+<% end %>
+<% if @image.categories.any? %>
+<h4>Categories</h4>
+<p>
+  <% @image.categories.each do |category| %>
+  <%= category.name %>,
+  <% end %>
+<% end %>
+<p>

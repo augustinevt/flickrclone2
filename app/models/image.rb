@@ -1,9 +1,9 @@
 class Image < ApplicationRecord
-
   belongs_to :user
   has_many :categories, through: :category_tags
   has_many :category_tags
-  has_many :tagged_users, class_name: "User", through: :user_tags
+  has_many :user_tags
+  has_many :tagged_users, source: :user, through: :user_tags
 
 
 

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'categories/create'
+
+  get 'categories/new'
+
+  get 'categories/show'
+
   get 'images/index'
 
   get 'images/show'
@@ -8,6 +14,8 @@ Rails.application.routes.draw do
   get 'images/create'
 
   root 'images#index'
+
+  resources :categories
 
 
   devise_for :users, controllers: { registrations: "registrations" }
