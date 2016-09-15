@@ -7,5 +7,6 @@ class User < ApplicationRecord
 
   has_one :user_profile
   has_many :images
-
+  has_many :user_tags
+  has_many :tagged_images, through: :user_tags, source: :image
 end

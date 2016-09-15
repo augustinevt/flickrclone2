@@ -1,6 +1,10 @@
 class Image < ApplicationRecord
 
   belongs_to :user
+  has_many :categories, through: :category_tags
+  has_many :category_tags
+  has_many :tagged_users, class_name: "User", through: :user_tags
+
 
 
   has_attached_file :attachment, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
